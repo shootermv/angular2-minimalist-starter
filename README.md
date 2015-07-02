@@ -18,7 +18,7 @@ $ npm start # 2.
 # 3. Open your browser and go to http://localhost:8080
 ```
 #### Tested on
-* Node.js 0.12.5
+* Node.js 0.12.4+
 * Chrome browser 43+
 * Firefox 38+
 
