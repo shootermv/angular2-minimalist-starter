@@ -1,4 +1,4 @@
-/// <reference path="../../../../typings/tsd.d.ts" />
+/// <reference path="../../../typings/tsd.d.ts" />
 
 // Angular 2
 import {Component, View, Directive, coreDirectives} from 'angular2/angular2';
@@ -13,7 +13,7 @@ import {TodoService} from '../../services/TodoService';
 })
 @View({
   directives: [coreDirectives, appDirectives],
-  templateUrl: './app/components/todo/todo.html'
+  templateUrl: '/client/components/todo/todo.html'
 })
 export class Todo {
 

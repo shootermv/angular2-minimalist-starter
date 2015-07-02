@@ -13,18 +13,18 @@
     },
     "filesGlob": [
         "typings/tsd.d.ts",
-        "src/**/*.ts"
+        "client/**/*.ts"
     ],
     "files": [
         "typings/tsd.d.ts",
-        "src/app/bootstrap.ts",
-        "src/app/components/app.ts",
-        "src/app/components/dashboard/dashboard.ts",
-        "src/app/components/home/home.ts",
-        "src/app/components/todo/todo.ts",
-        "src/app/directives/Autofocus.ts",
-        "src/app/directives/directives.ts",
-        "src/app/services/TodoService.ts",
-        "src/app/services/services.ts"
+        "client/bootstrap.ts",
+        "client/components/app.ts",
+        "client/components/dashboard/dashboard.ts",
+        "client/components/home/home.ts",
+        "client/components/todo/todo.ts",
+        "client/directives/Autofocus.ts",
+        "client/directives/directives.ts",
+        "client/services/TodoService.ts",
+        "client/services/services.ts"
     ]
 }

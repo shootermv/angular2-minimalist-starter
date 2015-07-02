@@ -1,4 +1,4 @@
-/// <reference path="../../typings/tsd.d.ts" />
+/// <reference path="../typings/tsd.d.ts" />
 
 // Angular 2
 import {bootstrap} from 'angular2/angular2';
