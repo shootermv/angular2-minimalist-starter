@@ -7,16 +7,13 @@ import {Component, View, Directive, coreDirectives} from 'angular2/angular2';
 import {appDirectives} from '../../directives/directives';
 import {TodoService} from '../../services/TodoService';
 
-// Use webpack to get files as a raw string using raw-loader
-const template = require('./todo.html');
-
 // Simple component
 @Component({
   selector: 'todo'
 })
 @View({
   directives: [coreDirectives, appDirectives],
-  template: template
+  templateUrl: './app/components/todo/todo.html'
 })
 export class Todo {
 

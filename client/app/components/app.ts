@@ -30,11 +30,11 @@ import {appDirectives} from '../directives/directives';
   <h1 class="title">{{ title }}</h1>
 
   <ul class="nav">
-    <li><a router-link="home">Home</a></li>
+    <li><a [router-link]="['/home']">Home</a></li>
     |
-    <li><a router-link="dashboard">Dashboard</a></li>
+    <li><a [router-link]="['/dashboard']">Dashboard</a></li>
     |
-    <li><a router-link="todo">Todo</a></li>
+    <li><a [router-link]="['/todo']">Todo</a></li>
   </ul>
 
   <main>
