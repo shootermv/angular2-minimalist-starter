@@ -28,11 +28,6 @@ $ npm start # 2.
 * [Webstorm 10](https://www.jetbrains.com/webstorm/download/)
 * [Sublime Text](http://www.sublimetext.com/3) with [Typescript plugin](https://github.com/Microsoft/Typescript-Sublime-plugin#installation)
 
-#### TODO
-* Add Angular FormBuilder example.
-* Add Tests.
-* Add LiveReload.
-
 ## Credits
 The following projects have served as inspiration and help:
 - [ng2-play](https://github.com/pkozlowski-opensource/ng2-play)

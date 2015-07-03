@@ -18,15 +18,14 @@ import {appDirectives} from '../directives/directives';
 })
 @View({
   // needed in order to tell Angular's compiler what's in the template
-  directives: [ RouterOutlet, RouterLink, coreDirectives, appDirectives ],
-  template: `
-  <style>
+  directives: [RouterOutlet, RouterLink, coreDirectives, appDirectives],
+  styles: [`
     .title  { font-family: Arial, Helvetica, sans-serif; }
     .nav    { display: block; list-style-type: none; padding: 0;  background-color: #F8F8F8; }
     .nav li { display: inline; }
     main    { padding: 0.5em; }
-  </style>
-
+  `],
+  template: `
   <h1 class="title">{{ title }}</h1>
 
   <ul class="nav">
@@ -43,9 +42,9 @@ import {appDirectives} from '../directives/directives';
   `
 })
 @RouteConfig([
-  { path: '/',          as: 'home',      component: Home },
+  { path: '/', as: 'home', component: Home },
   { path: '/dashboard', as: 'dashboard', component: Dashboard },
-  { path: '/todo',      as: 'todo',      component: Todo }
+  { path: '/todo', as: 'todo', component: Todo }
 ])
 export class App {
   title: string;

@@ -67,6 +67,9 @@ gulp.task('angular2', function() {
       '!node_modules/angular2/es6/prod/angular2_sfx.js',
       '!node_modules/angular2/es6/prod/angular2.api.js',
       '!node_modules/angular2/es6/prod/es5build.js',
+      '!node_modules/angular2/es6/prod/src/debug/**/*',
+      '!node_modules/angular2/es6/prod/src/mock/**/*',
+      '!node_modules/angular2/es6/prod/src/test_lib/**/*',
       'node_modules/angular2/es6/prod/**/*.js'
     ],
     PATHS.distLib + '/angular2', {

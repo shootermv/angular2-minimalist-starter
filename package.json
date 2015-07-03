@@ -1,7 +1,7 @@
 {
-  "name": "angular2-Minimalist-starter",
+  "name": "angular2-minimalist-starter",
   "version": "0.0.0",
-  "description": "An Angular2 Minimalist Starter kit featuring Angular 2",
+  "description": "A Minimalist Starter kit for Angular2",
   "main": "server/bootstrap.js",
   "scripts": {
     "start": "npm install && node ./node_modules/gulp/bin/gulp.js play",

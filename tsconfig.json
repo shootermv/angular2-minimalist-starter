@@ -21,7 +21,7 @@
         "client/components/app.ts",
         "client/components/dashboard/dashboard.ts",
         "client/components/home/home.ts",
-        "client/components/todo/todo.ts",
+        "client/components/movie-home/movie-home.ts",
         "client/directives/Autofocus.ts",
         "client/directives/directives.ts",
         "client/services/TodoService.ts",
