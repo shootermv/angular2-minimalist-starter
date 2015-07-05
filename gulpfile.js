@@ -6,7 +6,6 @@ var gulp = require('gulp');
 var plumber = require('gulp-plumber');
 var rename = require('gulp-rename');
 var runSequence = require('run-sequence');
-var size = require('gulp-size');
 var sourcemaps = require('gulp-sourcemaps');
 var tsd = require('tsd');
 var ts = require('gulp-typescript');
@@ -82,13 +81,6 @@ gulp.task('angular2', function() {
 gulp.task('libs', ['tsd', 'angular2'], function() {
   return gulp
     .src(PATHS.lib)
-    .pipe(rename(function(file) {
-      file.basename = file.basename.toLowerCase(); // Firebase is case sensitive, thus we lowercase all for ease of access
-    }))
-    .pipe(size({
-      showFiles: true,
-      gzip: true
-    }))
     .pipe(gulp.dest(PATHS.distLib));
 });
 
@@ -101,12 +93,7 @@ gulp.task('ts', function() {
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(ts(ng2play))
-    .js
     .pipe(sourcemaps.write('.'))
-    .pipe(size({
-      showFiles: true,
-      gzip: true
-    }))
     .pipe(gulp.dest(PATHS.distClient));
 });
 
@@ -114,10 +101,6 @@ gulp.task('html', function() {
   return gulp
     .src(PATHS.client.html)
     .pipe(changed(PATHS.distClient))
-    .pipe(size({
-      showFiles: true,
-      gzip: true
-    }))
     .pipe(gulp.dest(PATHS.distClient));
 });
 
@@ -131,10 +114,6 @@ gulp.task('css', function() {
     .pipe(sourcemaps.init())
     .pipe(autoprefixer())
     .pipe(sourcemaps.write('.'))
-    .pipe(size({
-      showFiles: true,
-      gzip: true
-    }))
     .pipe(gulp.dest(PATHS.distClient));
 });
 
@@ -142,10 +121,6 @@ gulp.task('static', function() {
   return gulp
     .src(PATHS.client.static)
     .pipe(changed(PATHS.distClient))
-    .pipe(size({
-      showFiles: true,
-      gzip: true
-    }))
     .pipe(gulp.dest(PATHS.distClient));
 });
 

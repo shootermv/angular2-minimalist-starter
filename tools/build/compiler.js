@@ -39,10 +39,6 @@ function build (compile, withSourceMaps) {
 	                })
 	                : gutil.noop()
 	        )
-	        .pipe(require('gulp-size')({
-				showFiles: true,
-				gzip: true
-			}))
 	        .pipe(gulp.dest(dest));
 	};
 }

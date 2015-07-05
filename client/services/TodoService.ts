@@ -1,7 +1,5 @@
 /// <reference path="../../typings/tsd.d.ts" />
 
-import {bind, Inject} from 'angular2/di';
-
 interface Todo {
   id: number;
   title: string;
@@ -36,10 +34,10 @@ export class TodoService {
     this._todos = cloneObj(data);
   }
 
-  addOne(title) {
+  addOne(todo) {
     this._todos.push({
       id: ++counter,
-      title: title,
+      title: todo.title,
       status: 'pending',
       createdAt: new Date()
     });

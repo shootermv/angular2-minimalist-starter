@@ -24,6 +24,10 @@ import {appDirectives} from '../directives/directives';
     .nav    { display: block; list-style-type: none; padding: 0;  background-color: #F8F8F8; }
     .nav li { display: inline; }
     main    { padding: 0.5em; }
+    .error-message {
+      display: block;
+      color: red;
+    }
   `],
   template: `
   <h1 class="title">{{ title }}</h1>

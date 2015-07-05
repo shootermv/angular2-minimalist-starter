@@ -1,6 +1,12 @@
-<form (submit)="addOne($event, title)">
-  <input #title placeholder="Enter new Todo" autofocus required>
+<form [ng-form-model]="todoForm" (submit)="todoForm.valid && addOne($event)">
+  <input ng-control="title" placeholder="Enter new Todo" autofocus>
   <button type="submit">Add</button>
+  <span class="error-message" *ng-if="
+    todoForm.dirty &&
+    todoForm.errors?.required &&
+    todoForm.controls.title.touched">
+    Todo is required
+  </span>
 </form>
 
 <table>
