@@ -19,12 +19,12 @@
   "homepage": "https://github.com/rogerpadilla/angular2-minimalist-starter",
   "dependencies": {
     "angular2": "^2.0.0-alpha.29",
-    "express": "^4.13.0",
+    "express": "^4.13.1",
     "reflect-metadata": "^0.1.0",
     "rx": "^2.5.3",
     "systemjs": "^0.18.4",
     "traceur": "^0.0.90",
-    "zone.js": "^0.5.1"
+    "zone.js": "^0.5.2"
   },
   "devDependencies": {
     "del": "^1.2.0",

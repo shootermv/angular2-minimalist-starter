@@ -6,7 +6,7 @@
 * Dependence Injection
 * Core Directives
 * Custom Directives
-* Form Builder (todo...)
+* Forms
 
 ## Goal
 Maintain an up-to-date and minimalist project using the very latest version of Angular2, while exposing most of the Angular2's features. Thus anyone can use it as an extremely minimal base to get up and running with Angular 2 and TypeScript (using Gulp for assisting with boilerplate).
