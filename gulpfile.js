@@ -33,7 +33,7 @@ var PATHS = {
     ts: ['client/**/*.ts'],
     html: 'client/**/*.html',
     css: 'client/**/*.css',
-    static: 'client/**/*.{svg,jpg,png,ico}'
+    img: 'client/**/*.{svg,jpg,png,ico}'
   },
   dist: 'dist',
   distClient: 'dist/client',
@@ -117,15 +117,15 @@ gulp.task('css', function() {
     .pipe(gulp.dest(PATHS.distClient));
 });
 
-gulp.task('static', function() {
+gulp.task('img', function() {
   return gulp
-    .src(PATHS.client.static)
+    .src(PATHS.client.img)
     .pipe(changed(PATHS.distClient))
     .pipe(gulp.dest(PATHS.distClient));
 });
 
 gulp.task('bundle', function(done) {
-  runSequence('clean', 'libs', ['ts', 'html', 'css', 'static'], done);
+  runSequence('clean', 'libs', ['ts', 'html', 'css', 'img'], done);
 });
 
 gulp.task('server:restart', function(done) {
@@ -157,7 +157,7 @@ gulp.task('play', ['bundle', 'server:restart'], function() {
   gulp.watch(PATHS.client.ts, ['ts']);
   gulp.watch(PATHS.client.html, ['html']);
   gulp.watch(PATHS.client.css, ['css']);
-  gulp.watch(PATHS.client.static, ['static']);
+  gulp.watch(PATHS.client.img, ['img']);
   gulp.watch(packageJson.main, ['server:restart']);
 });
 
