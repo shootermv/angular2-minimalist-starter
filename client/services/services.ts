@@ -2,6 +2,6 @@
 import {TodoService} from './TodoService';
 
 
-export var appServicesInjectables:Array<any> = [
+export var appServicesInjectables: Array<any> = [
   TodoService
 ];

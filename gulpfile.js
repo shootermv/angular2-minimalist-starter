@@ -3,8 +3,6 @@ var changed = require('gulp-changed');
 var childProcess = require('child_process');
 var del = require('del');
 var gulp = require('gulp');
-var plumber = require('gulp-plumber');
-var rename = require('gulp-rename');
 var runSequence = require('run-sequence');
 var sourcemaps = require('gulp-sourcemaps');
 var tsd = require('tsd');
@@ -18,13 +16,13 @@ var server;
 
 var PATHS = {
   lib: [
-    'node_modules/traceur/bin/traceur-runtime.js',
-    '!node_modules/systemjs/dist/*.src.js',
-    'node_modules/systemjs/dist/*.js',
+    'node_modules/angular2/node_modules/traceur/bin/traceur-runtime.js',
+    'node_modules/angular2/node_modules/rx/dist/rx.js',
     'node_modules/reflect-metadata/Reflect.js',
     'node_modules/zone.js/dist/zone.js',
     'node_modules/zone.js/dist/long-stack-trace-zone.js',
-    'node_modules/rx/dist/rx.js'
+    '!node_modules/systemjs/dist/*.src.js',
+    'node_modules/systemjs/dist/*.js'
   ],
   typings: [
     'typings/tsd.d.ts'
@@ -41,7 +39,7 @@ var PATHS = {
   port: 8080
 };
 
-var ng2play = ts.createProject('tsconfig.json', {
+var tsProject = ts.createProject('tsconfig.json', {
   typescript: require('typescript')
 });
 
@@ -86,9 +84,8 @@ gulp.task('ts', function() {
     .pipe(changed(PATHS.distClient, {
       extension: '.js'
     }))
-    .pipe(plumber())
     .pipe(sourcemaps.init())
-    .pipe(ts(ng2play))
+    .pipe(ts(tsProject))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(PATHS.distClient));
 });
@@ -96,7 +93,6 @@ gulp.task('ts', function() {
 gulp.task('lint', function () { // https://github.com/palantir/tslint#supported-rules
 	return gulp
 		.src(PATHS.client.ts)
-		.pipe(plumber())
 		.pipe(tslint())
 		.pipe(tslint.report('prose', {
 			emitError: false
@@ -116,7 +112,6 @@ gulp.task('css', function() {
     .pipe(changed(PATHS.distClient, {
       extension: '.css'
     }))
-    .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(autoprefixer())
     .pipe(sourcemaps.write('.'))
