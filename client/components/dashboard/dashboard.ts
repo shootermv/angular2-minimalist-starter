@@ -11,7 +11,7 @@ import {Component, View, Directive, ElementRef} from 'angular2/angular2';
 class XLarge {
   constructor(public el: ElementRef) {
     // simple dom manipulation to set font size to x-large
-    (<any>this.el).nativeElement.style.fontSize = 'x-large';
+    this.el.nativeElement.style.fontSize = 'x-large';
   }
 }
 
@@ -20,10 +20,11 @@ class XLarge {
   selector: 'dashboard'
 })
 @View({
-  directives: [ XLarge ],
+  directives: [XLarge],
+  styles: [
+    `span[x-large] { color: blue; }`
+  ],
   template: `
-  <style> span[x-large] { color: red; } </style>
-
   <div>
     <h2>Dashboard</h2>
     <span x-large>Extra Large Font Directive</span>

@@ -5,7 +5,6 @@ import {Component, View, Directive, coreDirectives} from 'angular2/angular2';
 import {formDirectives, Control, ControlGroup, Validators} from 'angular2/forms';
 
 // App
-import {appDirectives} from '../../directives/directives';
 import {TodoService} from '../../services/TodoService';
 
 // Simple component
@@ -13,7 +12,7 @@ import {TodoService} from '../../services/TodoService';
   selector: 'todo'
 })
 @View({
-  directives: [coreDirectives, formDirectives, appDirectives],
+  directives: [coreDirectives, formDirectives],
   templateUrl: '/client/components/todo/todo.html'
 })
 export class Todo {

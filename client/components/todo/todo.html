@@ -1,5 +1,5 @@
 <form [ng-form-model]="todoForm" (submit)="todoForm.valid && addOne($event)">
-  <input ng-control="title" placeholder="Enter new Todo" autofocus>
+  <input ng-control="title" placeholder="Enter new Todo">
   <button type="submit">Add</button>
   <span class="error-message" *ng-if="
     todoForm.dirty &&

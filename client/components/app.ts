@@ -9,17 +9,15 @@ import {Home} from './home/home';
 import {Dashboard} from './dashboard/dashboard';
 import {Todo} from './todo/todo';
 
-// Import all of our custom app directives
-import {appDirectives} from '../directives/directives';
-
 // App: Top Level Component
 @Component({
   selector: 'app' // without [ ] means we are selecting the tag directly,
 })
 @View({
   // needed in order to tell Angular's compiler what's in the template
-  directives: [RouterOutlet, RouterLink, coreDirectives, appDirectives],
+  directives: [RouterOutlet, RouterLink, coreDirectives],
   styles: [`
+    .title { margin: 0.5rem 0; }
     .main-content { padding: 0.5rem; }
     .main-nav { margin-bottom: 0.5rem; }
     .error-message {
