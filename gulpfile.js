@@ -9,9 +9,9 @@ var runSequence = require('run-sequence');
 var sourcemaps = require('gulp-sourcemaps');
 var tsd = require('tsd');
 var ts = require('gulp-typescript');
+var tslint = require('gulp-tslint');
 
 var packageJson = require('./package.json');
-var ng = require('./tools/build/ng');
 
 var spawn = childProcess.spawn;
 var server;
@@ -61,21 +61,17 @@ gulp.task('tsd', function() {
 });
 
 gulp.task('angular2', function() {
-  return ng.build(
-    [
-      '!node_modules/angular2/es6/prod/angular2_sfx.js',
-      '!node_modules/angular2/es6/prod/angular2.api.js',
-      '!node_modules/angular2/es6/prod/es5build.js',
-      '!node_modules/angular2/es6/prod/src/debug/**/*',
-      '!node_modules/angular2/es6/prod/src/mock/**/*',
-      '!node_modules/angular2/es6/prod/src/test_lib/**/*',
-      'node_modules/angular2/es6/prod/**/*.js'
-    ],
-    PATHS.distLib + '/angular2', {
-      namespace: 'angular2',
-      traceurOptions: {}
-    }
-  );
+  return gulp
+		.src([
+			'!node_modules/angular2/es6/**',
+			'!node_modules/angular2/node_modules/**',
+			'!node_modules/angular2/angular2.api.js',
+			'!node_modules/angular2/angular2_sfx.js',
+      '!node_modules/angular2/angular2.api.js',
+			'!node_modules/angular2/ts/**',
+			'node_modules/angular2/**/*.js'
+		])
+		.pipe(gulp.dest(PATHS.dist + '/lib/angular2'));
 });
 
 gulp.task('libs', ['tsd', 'angular2'], function() {
@@ -95,6 +91,16 @@ gulp.task('ts', function() {
     .pipe(ts(ng2play))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(PATHS.distClient));
+});
+
+gulp.task('lint', function () { // https://github.com/palantir/tslint#supported-rules
+	return gulp
+		.src(PATHS.client.ts)
+		.pipe(plumber())
+		.pipe(tslint())
+		.pipe(tslint.report('prose', {
+			emitError: false
+		}));
 });
 
 gulp.task('html', function() {
@@ -125,7 +131,7 @@ gulp.task('img', function() {
 });
 
 gulp.task('bundle', function(done) {
-  runSequence('clean', 'libs', ['ts', 'html', 'css', 'img'], done);
+  runSequence('clean', ['libs', 'lint', 'ts', 'html', 'css', 'img'], done);
 });
 
 gulp.task('server:restart', function(done) {
