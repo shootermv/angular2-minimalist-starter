@@ -1,4 +1,3 @@
-var autoprefixer = require('gulp-autoprefixer');
 var changed = require('gulp-changed');
 var childProcess = require('child_process');
 var del = require('del');
@@ -113,7 +112,6 @@ gulp.task('css', function() {
       extension: '.css'
     }))
     .pipe(sourcemaps.init())
-    .pipe(autoprefixer())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(PATHS.distClient));
 });

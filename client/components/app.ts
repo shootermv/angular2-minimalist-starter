@@ -20,29 +20,23 @@ import {appDirectives} from '../directives/directives';
   // needed in order to tell Angular's compiler what's in the template
   directives: [RouterOutlet, RouterLink, coreDirectives, appDirectives],
   styles: [`
-    .title  { font-family: Arial, Helvetica, sans-serif; }
-    .nav    { display: block; list-style-type: none; padding: 0;  background-color: #F8F8F8; }
-    .nav li { display: inline; }
-    main    { padding: 0.5em; }
+    .main-content { padding: 0.5rem; }
+    .main-nav { margin-bottom: 0.5rem; }
     .error-message {
       display: block;
       color: red;
     }
   `],
   template: `
-  <h1 class="title">{{ title }}</h1>
-
-  <ul class="nav">
-    <li><a [router-link]="['/home']">Home</a></li>
-    |
-    <li><a [router-link]="['/dashboard']">Dashboard</a></li>
-    |
-    <li><a [router-link]="['/todo']">Todo</a></li>
-  </ul>
-
-  <main>
+  <section class="main-content">
+    <h1 class="title">{{ title }}</h1>
+    <nav class="main-nav">
+      <a [router-link]="['/home']">Home</a>
+      <a [router-link]="['/dashboard']">Dashboard</a>
+      <a [router-link]="['/todo']">Todo</a>
+    </nav>
     <router-outlet></router-outlet>
-  </main>
+  </section>
   `
 })
 @RouteConfig([
