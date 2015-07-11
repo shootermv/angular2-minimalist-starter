@@ -1,7 +1,7 @@
 /// <reference path="../../../typings/tsd.d.ts" />
 
 // Angular 2
-import {Component, View, Directive, coreDirectives} from 'angular2/angular2';
+import {Component, View, coreDirectives} from 'angular2/angular2';
 import {formDirectives, Control, ControlGroup, Validators} from 'angular2/forms';
 
 // App
