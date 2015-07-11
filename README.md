@@ -11,6 +11,8 @@
 ## Goal
 Maintain an up-to-date and minimalist project using the very latest version of Angular2, while exposing most of the Angular2's features. Thus anyone can use it as an extremely minimal base to get up and running with Angular2 and TypeScript (using Gulp for assisting with boilerplate).
 
+**Note:** Angular 2.0 is not production ready yet! This seed project is perfect for playing around with the latest versions but do not start new (production intended) projects with it yet since a lot of new changes are going to be introduced until the framework is officially released.
+
 ## Quick start
 ```bash
 # 1. Clone / Download the repo.
