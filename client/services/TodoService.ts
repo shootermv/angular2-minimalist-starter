@@ -44,14 +44,7 @@ export class TodoService {
   }
 
   removeOne(id) {
-    const n = this._todos.length;
-    for (let i = 0; i < n; i++) {
-      if (this._todos[i].id === id) {
-        this._todos.splice(i, 1);
-        return 1;
-      }
-    }
-    return 0;
+    this._todos = this._todos.filter(el => el.id !== id);
   }
 
   find() {
