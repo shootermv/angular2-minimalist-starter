@@ -7,6 +7,7 @@ var app = express();
 var PORT = 8080;
 var DIST_DIR = path.join(__dirname, '..', 'dist');
 
+
 app.use('/lib', express.static(DIST_DIR + '/lib'));
 app.use('/client', express.static(DIST_DIR + '/client'));
 
