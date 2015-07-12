@@ -21,17 +21,13 @@ const data: Todo[] = [
   { id: ++counter, title: 'Unit tests', status: 'pending', createdAt: new Date() }
 ];
 
-function cloneObj(obj) {
-  return JSON.parse(JSON.stringify(obj));
-}
-
 // Our Todo Service that uses Store helper class for managing our state
 export class TodoService {
 
   private _todos: Array<Todo>;
 
   constructor() {
-    this._todos = cloneObj(data);
+    this._todos = data;
   }
 
   addOne(todo) {
@@ -48,6 +44,6 @@ export class TodoService {
   }
 
   find() {
-    return cloneObj(this._todos);
+    return this._todos;
   }
 }
