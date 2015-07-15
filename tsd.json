@@ -6,28 +6,28 @@
   "bundle": "typings/tsd.d.ts",
   "installed": {
     "node/node.d.ts": {
-      "commit": "a9c59f8166b4d7f1e8c4309a506987c2e6d78b5e"
+      "commit": "0fff32b558aa91ba24cfca5479aba02e4ef2fafe"
     },
     "es6-promise/es6-promise.d.ts": {
-      "commit": "a9c59f8166b4d7f1e8c4309a506987c2e6d78b5e"
+      "commit": "0fff32b558aa91ba24cfca5479aba02e4ef2fafe"
     },
     "express/express.d.ts": {
-      "commit": "a9c59f8166b4d7f1e8c4309a506987c2e6d78b5e"
+      "commit": "0fff32b558aa91ba24cfca5479aba02e4ef2fafe"
     },
     "mime/mime.d.ts": {
-      "commit": "a9c59f8166b4d7f1e8c4309a506987c2e6d78b5e"
+      "commit": "0fff32b558aa91ba24cfca5479aba02e4ef2fafe"
     },
     "angular2/angular2.d.ts": {
-      "commit": "a9c59f8166b4d7f1e8c4309a506987c2e6d78b5e"
+      "commit": "0fff32b558aa91ba24cfca5479aba02e4ef2fafe"
     },
     "rx/rx.d.ts": {
-      "commit": "a9c59f8166b4d7f1e8c4309a506987c2e6d78b5e"
+      "commit": "0fff32b558aa91ba24cfca5479aba02e4ef2fafe"
     },
     "rx/rx-lite.d.ts": {
-      "commit": "a9c59f8166b4d7f1e8c4309a506987c2e6d78b5e"
+      "commit": "0fff32b558aa91ba24cfca5479aba02e4ef2fafe"
     },
     "serve-static/serve-static.d.ts": {
-      "commit": "a9c59f8166b4d7f1e8c4309a506987c2e6d78b5e"
+      "commit": "0fff32b558aa91ba24cfca5479aba02e4ef2fafe"
     }
   }
 }
