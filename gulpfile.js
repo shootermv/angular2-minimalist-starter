@@ -23,11 +23,9 @@ var PATHS = {
     '!node_modules/systemjs/dist/*.src.js',
     'node_modules/systemjs/dist/*.js'
   ],
-  typings: [
-    'typings/tsd.d.ts'
-  ],
+  typings: 'typings/tsd.d.ts',
   client: {
-    ts: ['client/**/*.ts'],
+    ts: 'client/**/*.ts',
     html: 'client/**/*.html',
     css: 'client/**/*.css',
     img: 'client/**/*.{svg,jpg,png,ico}'
@@ -79,7 +77,7 @@ gulp.task('libs', ['tsd', 'angular2'], function() {
 
 gulp.task('ts', function() {
   return gulp
-    .src([].concat(PATHS.typings, PATHS.client.ts)) // instead of gulp.src(...), project.src() can be used
+    .src([PATHS.typings, PATHS.client.ts])
     .pipe(changed(PATHS.distClient, {
       extension: '.js'
     }))
