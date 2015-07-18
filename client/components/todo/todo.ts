@@ -9,6 +9,7 @@ import {TodoService} from '../../services/TodoService';
 
 // Simple component
 @Component({
+  viewInjector: [TodoService],
   selector: 'todo'
 })
 @View({

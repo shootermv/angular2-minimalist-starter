@@ -2,7 +2,7 @@
 
 // Angular 2
 import {Component, View, coreDirectives} from 'angular2/angular2';
-import {RouteConfig, RouterOutlet, RouterLink} from 'angular2/router';
+import {RouteConfig, RouterOutlet, RouterLink, routerInjectables} from 'angular2/router';
 
 // We use a folder if we want separate files
 import {Home} from './home/home';
@@ -11,6 +11,7 @@ import {Todo} from './todo/todo';
 
 // App: Top Level Component
 @Component({
+  viewInjector: [routerInjectables],
   selector: 'app' // without [ ] means we are selecting the tag directly,
 })
 @View({
