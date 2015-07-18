@@ -58,12 +58,12 @@ gulp.task('tsd', function() {
 gulp.task('angular2', function() {
   return gulp
 		.src([
+      '!node_modules/angular2/node_modules/**',
 			'!node_modules/angular2/es6/**',
-			'!node_modules/angular2/node_modules/**',
+      '!node_modules/angular2/ts/**',
 			'!node_modules/angular2/angular2.api.js',
 			'!node_modules/angular2/angular2_sfx.js',
       '!node_modules/angular2/angular2.api.js',
-			'!node_modules/angular2/ts/**',
 			'node_modules/angular2/**/*.js'
 		])
 		.pipe(gulp.dest(PATHS.dist + '/lib/angular2'));
