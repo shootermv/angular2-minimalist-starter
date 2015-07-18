@@ -1,19 +1,8 @@
 /// <reference path="../../../typings/tsd.d.ts" />
 
 // Angular 2
-import {Component, View, Directive, ElementRef} from 'angular2/angular2';
-
-// Simple example directive that should be in `/directives` folder
-// Todo: refactor
-@Directive({
-  selector: '[x-large]' // using [ ] means selecting attributes
-})
-class XLarge {
-  constructor(public el: ElementRef) {
-    // simple dom manipulation to set font size to x-large
-    this.el.nativeElement.style.fontSize = 'x-large';
-  }
-}
+import {Component, View} from 'angular2/angular2';
+import {XLarge} from '../../directives/XLarge';
 
 // Simple component
 @Component({
