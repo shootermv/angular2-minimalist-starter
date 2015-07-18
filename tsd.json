@@ -28,6 +28,9 @@
     },
     "serve-static/serve-static.d.ts": {
       "commit": "c0fdc8f774149840e99e45656be3013143f31309"
+    },
+    "lib/lib.d.ts": {
+      "commit": "c0fdc8f774149840e99e45656be3013143f31309"
     }
   }
 }
