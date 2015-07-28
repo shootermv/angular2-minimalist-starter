@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/rogerpadilla/angular2-minimalist-starter",
   "dependencies": {
-    "angular2": "^2.0.0-alpha.31",
+    "angular2": "^2.0.0-alpha.32",
     "reflect-metadata": "^0.1.0",
     "systemjs": "^0.18.4",
     "zone.js": "^0.5.2",
@@ -29,11 +29,11 @@
     "gulp": "^3.9.0",
     "gulp-changed": "^1.2.1",
     "gulp-sourcemaps": "^1.5.2",
-    "gulp-tslint": "^3.1.1-beta",
-    "gulp-typescript": "^2.7.8",
+    "gulp-tslint": "^3.1.2",
+    "gulp-typescript": "^2.8.0",
     "gulp-util": "^3.0.6",
-    "run-sequence": "^1.1.1",
+    "run-sequence": "^1.1.2",
     "tsd": "^0.6.3",
-    "typescript": "^1.5.0-beta"
+    "typescript": "^1.5.3"
   }
 }
