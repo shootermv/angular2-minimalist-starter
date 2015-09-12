@@ -1,5 +1,3 @@
-/// <reference path="../../typings/tsd.d.ts" />
-
 interface Todo {
   id: number;
   title: string;

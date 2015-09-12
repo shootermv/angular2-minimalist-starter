@@ -7,7 +7,7 @@ import {Component, View} from 'angular2/angular2';
   selector: 'home'
 })
 @View({
-  stylesUrl: '/client/components/home/home.css',
+  styleUrls: ['/client/components/home/home.css'],
   templateUrl: '/client/components/home/home.html'
 })
 export class Home {

@@ -1,36 +1,34 @@
-/// <reference path="../../../typings/tsd.d.ts" />
-
 // Angular 2
-import {Component, View, coreDirectives} from 'angular2/angular2';
-import {formDirectives, Control, ControlGroup, Validators} from 'angular2/forms';
+import {Component, View, CORE_DIRECTIVES} from 'angular2/angular2';
+import {FORM_DIRECTIVES, ControlGroup, FormBuilder} from 'angular2/angular2';
+import {Validators} from 'angular2/angular2';
 
 // App
 import {TodoService} from '../../services/TodoService';
 
 // Simple component
 @Component({
-  viewInjector: [TodoService],
+  viewBindings: [FormBuilder, TodoService],
   selector: 'todo'
 })
 @View({
-  directives: [coreDirectives, formDirectives],
+  directives: [CORE_DIRECTIVES, FORM_DIRECTIVES],
   templateUrl: '/client/components/todo/todo.html'
 })
 export class Todo {
 
   todoForm: ControlGroup;
 
-  constructor(private todoService: TodoService) {
-    this.todoForm = new ControlGroup({
-      title: new Control('', Validators.required)
+  constructor(private todoService: TodoService, fb: FormBuilder) {
+    this.todoForm = fb.group({
+      title: ['', Validators.required]
     });
   }
 
-  addOne($event) {
-    $event.preventDefault();
+  addOne() {
     const todo = this.todoForm.value;
     this.todoService.addOne(todo);
-    this.todoForm.controls.title.updateValue('');
+    this.todoForm.controls['title'].updateValue('');
   }
 
   removeOne(todo) {
