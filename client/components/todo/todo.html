@@ -22,7 +22,7 @@
     <tr *ng-for="#todo of find()">
       <td>{{ todo.title }}</td>
       <td>{{ todo.status }}</td>
-      <td>{{ todo.createdAt }}</td>
+      <td>{{ todo.createdAt | date:'dd/MM/yyyy hh:mm' }}</td>
       <td>
         <button (click)="removeOne(todo)">Remove</button>
       </td>
